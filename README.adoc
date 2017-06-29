@@ -1,0 +1,8 @@
+= Microservices in Practice Lab - configuration repository
+
+Sample configuration repository for link:https://github.com/xpaas-solutions/lab-microservices-in-practice[Microservices in Practice Lab]
+
+== Copyright and Licensing
+
+Copyright (C) 2017 Krzysztof Sobkowiak +
+Free use of this software is granted under the terms of the link:LICENSE[Apache License].
