@@ -1,0 +1,19 @@
+spring:  
+  jpa:
+    hibernate: 
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://orderdb:3306/orders  
+    username: root
+    password: dbpass
+    initialize: true 
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml    
+
+customer:
+  service:
+    url: http://customer/customers/
+catalog:
+  service:
+    url: http://catalog/items/

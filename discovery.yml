@@ -1,0 +1,20 @@
+eureka:
+  datacenter: ms-wks
+  name: discovery-service
+  environment: dev
+  dashboard:
+      enabled: true  
+  server:
+    enabled: true
+#   enableSelfPreservation: false
+    waitTimeInMsWhenSyncEmpty: 0
+    context-path: /eureka
+#   response-cache-update-interval-ms: 500
+#   eviction-interval-timer-in-ms: 500  
+# client:
+#   registerWithEureka: false
+#   fetchRegistry: false
+  instance:
+    nonSecurePort: 8761
+    hostname: discovery
+    leaseRenewalIntervalInSeconds: 3

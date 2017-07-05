@@ -1,0 +1,49 @@
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+  routes:
+    enabled: true
+    sensitive: false
+    
+hystrix:
+  command: 
+    default: 
+      execution: 
+        isolation: 
+          thread:
+            timeoutInMilliseconds: 50000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 50000
+  eureka:
+    enabled: true
+
+management:
+  add-application-context-header: false
+security:
+  enable-csrf: false 
+
+zuul:
+  add-proxy-headers: true
+  ignoredServices: ''
+  ignoredPatterns: /**/private/**
+  routes:
+    gateway:
+      path: /gateway/**
+      serviceId: gateway
+    catalog:
+      path: /catalog/**
+      serviceId: catalog
+    customer:
+      path: /customer/**
+      serviceId: customer
+    order:
+      path: /order/**
+      serviceId: order
+    discovery:
+      path: /discovery/**
+      serviceId: discovery        

@@ -1,0 +1,9 @@
+spring:  
+  jpa:
+    hibernate: 
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://catalogdb:3306/items  
+    username: root
+    password: dbpass
+    initialize: true 

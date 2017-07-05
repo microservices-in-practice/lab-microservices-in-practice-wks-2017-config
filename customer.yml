@@ -1,0 +1,9 @@
+spring:  
+  jpa:
+    hibernate: 
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://customerdb:3306/customers  
+    username: root
+    password: dbpass
+    initialize: true 

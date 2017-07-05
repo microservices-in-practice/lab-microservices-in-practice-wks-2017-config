@@ -1,0 +1,69 @@
+
+info:
+  name: ${spring.application.name}
+  description: Microservices in Practice lab
+  url: https://github.com/xpaas-solutions/lab-microservices-in-practice
+  
+spring:
+  cloud:  
+    stream:
+      kafka:
+        binder:
+          brokers: kafka
+          zkNodes: kafka
+   
+
+eureka:   
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      managementPath: ${server.contextPath:/}private/
+      management:
+        context-path: ${server.contextPath:/}private/
+    statusPageUrlPath: ${server.contextPath:/}private/info
+    healthCheckUrlPath: ${server.contextPath:/}private/health
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+  eureka:
+    enabled: true
+    
+management:
+  security:
+    enabled: false  
+  context-path: /private                 
+  health:
+    binders: 
+      enabled: true
+      
+endpoints: 
+  enabled: false
+  health: 
+    enabled: true
+  env: 
+    enabled: true
+  metrics: 
+    enabled: true
+  info:
+    enabled: true
+  jolokia: 
+    enabled:  true
+  jmx:
+    enabled: true 
+  dump:
+    enabled: true
+  trace:
+    enabled: true
+ 
+logging:
+  level:
+    root: INFO
+    com.netflix.discovery: 'OFF'
+    org.apache.kafka.clients.consumer: 'OFF'    
+    kafka.common: 'OFF'
+    clients.consumer: 'OFF'
